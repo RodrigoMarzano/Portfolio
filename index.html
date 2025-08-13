@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rodrigo Marzano</title>
+   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // Enable class-based dark mode
+    tailwind.config = {
+      darkMode: 'class',
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    section { scroll-margin-top: 80px; }
+  </style>
+</head>
+<body class="bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-200">
+
+  <!-- Navigation -->
+  <header class="bg-white shadow fixed w-full z-20 dark:bg-gray-800 dark:shadow-gray-700">
+    <nav class="container mx-auto flex justify-between items-center p-4">
+      <h1 class="text-2xl font-bold">Rodrigo Marzano</h1>
+      <div id="navLinks" class="flex flex-row gap-6">
+        <a href="#about" class="hover:text-blue-500 dark:hover:text-blue-400 transition-colors">About</a>
+        <a href="#projects" class="hover:text-blue-500 dark:hover:text-blue-400 transition-colors">Projects</a>
+        <a href="#contact" class="hover:text-blue-500 dark:hover:text-blue-400 transition-colors">Contact</a>
+      </div>
+      <!-- Dark mode toggle -->
+      <div class="flex items-center gap-2">
+        <span class="text-xl">🌙</span>
+        <label class="relative inline-flex items-center cursor-pointer">
+          <input type="checkbox" id="darkModeToggle" class="sr-only peer">
+          <div class="w-11 h-6 bg-gray-200 rounded-full peer peer-checked:bg-blue-500 dark:bg-gray-700 dark:peer-checked:bg-blue-400 transition-colors"></div>
+          <div class="absolute left-0.5 top-0.5 w-5 h-5 bg-white rounded-full shadow transform peer-checked:translate-x-5 transition-transform"></div>
+        </label>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="h-screen flex flex-col justify-center items-center bg-gradient-to-r from-blue-500 to-purple-600 text-white text-center">
+    <h2 class="text-5xl font-bold mb-4">Hello, I'm Rodrigo Marzano</h2>
+    <p class="text-xl">Game Developer and Designer Student | Unity | C# | Problem Solver</p>
+    <a href="#projects" class="mt-6 px-6 py-3 bg-white text-blue-600 rounded-lg font-semibold shadow hover:bg-gray-200 transition-colors">
+      View My Work
+    </a>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="container mx-auto py-16 px-4">
+    <h3 class="text-3xl font-bold text-center mb-8">About Me</h3>
+    <div class="flex flex-col md:flex-row items-center md:space-x-10">
+      <img src="Images/fotocara.jpg" alt="Profile Picture" class="rounded-full w-48 h-48 object-cover mb-6 md:mb-0 shadow-lg" />
+      <p class="text-lg leading-relaxed">
+        My strongest side is my analytical thinking and my capacity to explain ideas or the work I'm doing to others with passion, I've proven this to myself leading three college projects. I would love to participate in any work that lets me improve my programming skills.
+      </p>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="bg-gray-200 py-16 dark:bg-gray-800">
+    <h3 class="text-3xl font-bold text-center mb-8 dark:text-gray-200">Projects</h3>
+    <div class="container mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <!-- Project Card -->
+      <div class="bg-white shadow rounded-lg overflow-hidden hover:shadow-lg transition-transform transform hover:scale-105 dark:bg-gray-700 dark:shadow-gray-600">
+        <img src="https://via.placeholder.com/400x250" alt="Project 1" class="w-full h-48 object-cover" />
+        <div class="p-4">
+          <h4 class="text-xl font-semibold mb-2 dark:text-gray-100">Project Title</h4>
+          <p class="text-gray-600 dark:text-gray-300">Short description of the project.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="container mx-auto py-16 px-4 text-center">
+    <h3 class="text-3xl font-bold mb-8 dark:text-gray-200">Contact Me</h3>
+    <p class="mb-4">Feel free to reach out via email:</p>
+    <a href="mailto:rodri.marzano@gmail.com" class="text-blue-500 hover:underline text-lg dark:text-blue-400">rodri.marzano@gmail.com</a>
+
+    <div class="mt-6 space-x-6 flex justify-center items-center">
+      <!-- LinkedIn -->
+      <a href="https://www.linkedin.com/in/rodrigo-marzano-158b31185" target="_blank" rel="noopener noreferrer"
+         class="text-gray-600 hover:text-blue-500 dark:text-gray-400 dark:hover:text-blue-400 transition-colors" aria-label="LinkedIn">
+        <svg class="w-8 h-8 fill-current" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M100.28 448H7.4V149.82h92.88zM53.79 108.1C24.09 108.1 0 83.68 0 54.15 0 24.62 24.09 .2 53.79.2c29.55 0 53.86 24.42 53.86 53.95 0 29.53-24.31 53.95-53.86 53.95zM447.9 448h-92.68V302.4c0-34.7-12.45-58.4-43.56-58.4-23.77 0-37.93 16-44.17 31.5-2.28 5.54-2.85 13.26-2.85 21v151.5H170.3s1.24-245.7 0-271.2h92.7v38.4c-.18.29-.43.59-.61.88h.61v-.88c12.32-19 34.29-46.1 83.21-46.1 60.9 0 106.64 39.77 106.64 125.26V448z"/>
+        </svg>
+      </a>
+
+      <!-- GitHub -->
+      <a href="https://github.com/RodrigoMarzano" target="_blank" rel="noopener noreferrer"
+         class="text-gray-600 hover:text-blue-500 dark:text-gray-400 dark:hover:text-blue-400 transition-colors" aria-label="GitHub">
+        <svg class="w-8 h-8 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.757-1.333-1.757-1.09-.744.083-.729.083-.729 1.205.084 1.84 1.236 1.84 1.236 1.07 1.835 2.807 1.305 3.492.998.108-.774.418-1.305.763-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.468-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.602-.015 2.892-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12z"/>
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-white shadow mt-10 py-4 text-center text-gray-600 dark:bg-gray-800 dark:text-gray-400 dark:shadow-gray-700">
+    &copy; 2025 Rodrigo Marzano. All rights reserved.
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button id="backToTop" aria-label="Back to top" onclick="window.scrollTo({top:0, behavior:'smooth'})"
+    class="fixed bottom-6 right-6 bg-blue-500 hover:bg-blue-600 text-white w-12 h-12 rounded-lg flex items-center justify-center shadow-lg transition duration-300 opacity-0 pointer-events-none">
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7" />
+    </svg>
+  </button>
+
+<script>
+  // Dark mode toggle
+  const toggle = document.getElementById('darkModeToggle');
+
+  // Initialize state based on current dark mode
+  if (document.documentElement.classList.contains('dark')) {
+    toggle.checked = true;
+  }
+
+  toggle.addEventListener('change', () => {
+    document.documentElement.classList.toggle('dark', toggle.checked);
+  });
+
+  // Back to Top button fade in/out
+  window.addEventListener('scroll', () => {
+    const backToTopBtn = document.getElementById('backToTop');
+    if (window.scrollY > 300) {
+      backToTopBtn.classList.remove('opacity-0', 'pointer-events-none');
+      backToTopBtn.classList.add('opacity-100', 'pointer-events-auto');
+    } else {
+      backToTopBtn.classList.add('opacity-0', 'pointer-events-none');
+      backToTopBtn.classList.remove('opacity-100', 'pointer-events-auto');
+    }
+  });
+</script>
+
+</body>
+</html>
