@@ -21,24 +21,54 @@
   <!-- Navigation -->
   <header class="bg-white shadow fixed w-full z-20 dark:bg-gray-900 dark:text-gray-200">
     <nav class="container mx-auto flex justify-between items-center p-4">
-      <h1 class="text-2xl font-bold">Rodrigo Marzano</h1>
-      <div class="flex items-center gap-16">
-        <div id="navLinks" class="flex flex-row gap-6">
-          <a href="#about" class="hover:text-blue-500 dark:hover:text-blue-400 transition-colors">About</a>
-          <a href="#projects" class="hover:text-blue-500 dark:hover:text-blue-400 transition-colors">Projects</a>
-          <a href="#contact" class="hover:text-blue-500 dark:hover:text-blue-400 transition-colors">Contact</a>
-        </div>
-        <!-- Dark mode toggle -->
-        <div class="flex items-center gap-2">
-          <span class="text-xl">🌙</span>
-          <label class="relative inline-flex items-center cursor-pointer">
-            <input type="checkbox" id="darkModeToggle" class="sr-only peer">
-            <div class="w-11 h-6 bg-gray-200 rounded-full peer peer-checked:bg-blue-500 dark:bg-gray-700 dark:peer-checked:bg-blue-400 transition-colors"></div>
-            <div class="absolute left-0.5 top-0.5 w-5 h-5 bg-white rounded-full shadow transform peer-checked:translate-x-5 transition-transform"></div>
-          </label>
-        </div>
-      </div>
-    </nav>  
+  <h1 class="text-2xl font-bold">Rodrigo Marzano</h1>
+
+  <!-- Desktop menu -->
+  <div class="hidden md:flex items-center gap-16">
+    <div class="flex gap-6">
+      <a href="#about" class="hover:text-blue-500 dark:hover:text-blue-400">About</a>
+      <a href="#projects" class="hover:text-blue-500 dark:hover:text-blue-400">Projects</a>
+      <a href="#contact" class="hover:text-blue-500 dark:hover:text-blue-400">Contact</a>
+    </div>
+
+    <!-- Dark mode toggle -->
+    <div class="flex items-center gap-2">
+      <span class="text-xl">🌙</span>
+      <label class="relative inline-flex items-center cursor-pointer">
+        <input type="checkbox" id="darkModeToggle" class="sr-only peer">
+        <div class="w-11 h-6 bg-gray-200 rounded-full peer-checked:bg-blue-500 dark:bg-gray-700"></div>
+        <div class="absolute left-0.5 top-0.5 w-5 h-5 bg-white rounded-full shadow transform peer-checked:translate-x-5 transition"></div>
+      </label>
+    </div>
+  </div>
+
+  <!-- Mobile button -->
+    <div class="flex items-center gap-4 md:hidden">
+      <!-- Dark mode toggle (mobile visible) -->
+       <span class="text-xl">🌙</span>
+      <label class="relative inline-flex items-center cursor-pointer">
+        <input type="checkbox" id="darkModeToggleMobile" class="sr-only peer">
+        <div class="w-11 h-6 bg-gray-200 rounded-full
+                    peer-checked:bg-blue-500
+                    dark:bg-gray-700 transition-colors"></div>
+        <div class="absolute left-0.5 top-0.5 w-5 h-5 bg-white rounded-full shadow
+                    transform peer-checked:translate-x-5 transition-transform"></div>
+      </label>
+
+      <!-- Drop-down menu -->
+      <button id="menuBtn" class="text-3xl">
+        ☰
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div id="mobileMenu"
+      class="md:hidden hidden bg-white dark:bg-gray-900 border-t dark:border-gray-700">
+    <div class="flex flex-col p-4 gap-4">
+      <a href="#about" class="hover:text-blue-500">About</a>
+      <a href="#projects" class="hover:text-blue-500">Projects</a>
+      <a href="#contact" class="hover:text-blue-500">Contact</a>
   </header>
 
   <!-- Hero Section -->
@@ -259,6 +289,31 @@
       backToTopBtn.classList.remove('opacity-100', 'pointer-events-auto');
     }
   });
+
+  // Open/Close menu (mobile)
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+
+  menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+
+  // Sincronizar dark mode mobile
+  const toggleMobile = document.getElementById('darkModeToggleMobile');
+  toggleMobile.checked = document.documentElement.classList.contains('dark');
+
+  toggleMobile.addEventListener('change', () => {
+    document.documentElement.classList.toggle('dark', toggleMobile.checked);
+    document.getElementById('darkModeToggle').checked = toggleMobile.checked;
+  });
+
+  // Menu closes on touched link
+  mobileMenu.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    mobileMenu.classList.add('hidden');
+  });
+});
+
 </script>
 
 </body>
